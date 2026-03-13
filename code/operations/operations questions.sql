@@ -1,0 +1,74 @@
+-- Level 1 — Basic (Single Operator, Straightforward)
+-- Q1. Display the full name of every employee by combining first_name and last_name with a space in between. Label the column as full_name.
+--
+-- Q2. Display a column called employee_info that shows: "ID: 101 | Name: Ravi Kumar" for every employee. Use || to build this. (Column format: 'ID: ' || emp_id || ' | Name: ' || first_name || ' ' || last_name)
+--
+-- Q3. Retrieve all employees who work in the IT department AND have a salary greater than 75000.
+--
+-- Q4. Retrieve all employees who work in Mumbai OR Delhi.
+--
+-- Q5. Retrieve all employees who do NOT have the status 'Inactive'.
+--
+-- Q6. Retrieve all employees whose department is one of: Sales, Finance, or Marketing. Use the IN operator.
+--
+-- Q7. Retrieve all employees whose department is NOT HR and NOT Marketing. Use NOT IN.
+--
+-- Q8. Retrieve all employees whose salary is between 50000 and 70000 (inclusive). Use BETWEEN.
+--
+-- Q9. Retrieve all employees where phone is NULL (no phone number on record).
+--
+-- Q10. Retrieve all employees whose first_name starts with the letter 'R'. Use LIKE.
+--
+-- Q11. Retrieve all employees whose email ends with '@gmail.com'. Use LIKE.
+--
+-- Q12. Retrieve all employees whose email is NOT NULL.
+--
+-- Level 2 — Intermediate (Combining Two or More Operators)
+-- Q13. Retrieve all employees who are in the IT or Finance department AND whose salary is NOT BETWEEN 60000 and 80000.
+--
+-- Q14. Retrieve all employees from Bengaluru or Mumbai who were hired between 2018-01-01 and 2021-12-31. Use BETWEEN for the date.
+--
+-- Q15. Display a combined column contact_card as: "Name: Ravi Kumar | City: Mumbai". If the phone is NULL, show "Phone: Not Available" instead of NULL. Use COALESCE with ||.
+--
+-- Q16. Retrieve all employees whose first_name contains the letter 'a' anywhere in the name AND whose salary is greater than 55000. Use LIKE and AND.
+--
+-- Q17. Retrieve all employees who are Active AND work in one of these cities: Bengaluru, Hyderabad, or Kochi. Use AND with IN.
+--
+-- Q18. Retrieve all employees whose age is NOT BETWEEN 25 and 35 and whose department is not HR. Use NOT BETWEEN and NOT IN together.
+--
+-- Q19. Retrieve all orders where delivery_status is NULL OR the status is 'Pending'. Use IS NULL and OR.
+--
+-- Q20. Retrieve all employees whose last_name ends with 'ar' OR whose salary is greater than 80000.
+--
+-- Level 3 — Advanced (Multiple Operators, Edge Cases, Deeper Logic)
+-- Q21. Retrieve all employees where salary is NULL OR salary is less than 50000. Display their full name using || and label the column employee_name. Sort by salary (NULLs last — handle this carefully).
+--
+-- Q22. Find all employees who placed orders with delivery_status = 'Delivered'. Use IN with a subquery on the ORDERS table. Display their full name and department.
+--
+-- Q23. Retrieve all employees who are Active, are from Bengaluru or Mumbai, have a salary between 55000 and 90000, and whose email does NOT contain 'yahoo'. Use AND, IN, BETWEEN, and NOT LIKE together.
+--
+-- Q24. Explain what is wrong with the following query and rewrite it correctly:
+--
+-- sql
+-- SELECT * FROM employees
+-- WHERE department NOT IN ('IT', NULL);
+-- What will this query return and why? Write the corrected version.
+--
+-- Q25. Retrieve all employees whose first name is exactly 5 characters long AND starts with either 'R' or 'S'. Use LIKE with _ wildcard and combine with OR.
+--
+-- Q26. Retrieve all employees who either have no phone number (phone IS NULL) OR whose email does not belong to a company domain (email NOT LIKE '%@company.com') AND whose salary is above 60000. Use parentheses carefully to control precedence.
+--
+-- Q27. Using only ||, BETWEEN, IN, IS NULL, LIKE, write a single SELECT query that:
+--
+-- Shows a column profile = "[dept] - [first_name] [last_name]" (e.g., "IT - Ravi Kumar")
+--
+-- Only for employees who are Active
+--
+--                                                                From departments IT, Sales, or Finance
+--
+--                                                                    Hired between 2017-01-01 and 2022-12-31
+--
+--                                                                    Whose email is NOT NULL
+--
+--                                                                    AND whose first_name starts with any letter from A to S (use LIKE or BETWEEN on first_name)
+--
