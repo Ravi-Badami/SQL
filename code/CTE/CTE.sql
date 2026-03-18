@@ -129,6 +129,39 @@ select * from orders where EXTRACT(YEAR FROM order_date) = 2024
 select order_id,customer_id,order_date,total_amount from recent_orders;
 
 
+-- Multiple CTEs (Beginner-Friendly)
+-- Q1: Employee Summary
+-- Write two CTEs:
+-- First CTE (dept_count) to calculate number of employees per department.
+-- Second CTE (high_budget_depts) to filter departments with budget > 600,000.
+-- Join them and display dept_name, employee_count, and budget for high-budget departments only.
+
+-- Q2: Salary Comparison
+-- Write two CTEs:
+-- First CTE (overall_avg_salary) to calculate the average salary of ALL employees.
+-- Second CTE (dept_avg_salary) to calculate average salary per department.
+-- Join them and display dept_name, dept_avg_salary, and overall_avg_salary. Highlight departments above overall average.
+
+-- Q3: Top Performers
+-- Write two CTEs:
+-- First CTE (high_earners) for employees with salary > 75,000.
+-- Second CTE (their_depts) for departments containing those high earners.
+-- Display dept_name and number of high earners per such department.
+
+-- Recursive CTEs (Beginner-Friendly)
+-- Q4: Simple Employee Levels
+-- Write a recursive CTE named emp_levels to show employee hierarchy levels (1 = top managers). Start from employees with manager_id IS NULL, then find direct reports. Display emp_name, manager's emp_name (or 'Top' if NULL), and level. Stop at level 3.
+
+-- Q5: Count Direct Reports
+-- Write a recursive CTE to list each manager and the number of their direct reports (only level 1 and 2). Display manager's emp_name and direct_reports_count.
+
+-- Q6: Numbers Sequence
+-- Write a recursive CTE named number_sequence that generates numbers from 1 to 10. Use anchor SELECT 1 AS n, then recurse by adding 1 each time. Display the sequence.
+
+
+
+
+
 -- Intermediate Questions
 -- Q8. Write two CTEs: one named total_orders_per_customer that counts orders per customer, and another named total_spend_per_customer that sums total_amount per customer. Join both CTEs together and display customer_name, total orders placed, and total amount spent.
 
